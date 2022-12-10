@@ -8,29 +8,29 @@
 """
 
 
-def calc(data: str):
+def calc(data: str) -> str:
     if isdigit(data):
-        return float(data)
+        return data
 
     if "(" in data:
         ind_s, ind_f = find_bracket(data)
         if ind_s != ind_f:
             data = data[0:ind_s] + str(calc(data[ind_s + 1:ind_f])) + data[ind_f + 1:]
-            data = str(calc(data))
+            data = calc(data)
 
     if "*" in data or "/" in data:
         ind_s, ind_f, ind_o = find_expression(data, ["*", "/"])
         if data[ind_o] == "*":
             data = (data[0:ind_s] + str(float(data[ind_s:ind_o]) * float(data[ind_o + 1:ind_f + 1])) + data[ind_f + 1:])
-            data = str(calc(data))
+            data = calc(data)
         elif data[ind_o] == "/":
             data = data[0:ind_s] + \
                    str(float(data[ind_s:ind_o]) / float(data[ind_o + 1:ind_f + 1])) + \
                    data[ind_f + 1:]
-            data = str(calc(data))
+            data = calc(data)
 
     if isdigit(data):
-        return float(data)
+        return data
 
     if "+" in data or "-" in data:
         ind_s, ind_f, ind_o = find_expression(data, ["+", "-"])
@@ -41,9 +41,13 @@ def calc(data: str):
             data = data[0:ind_s] + \
                    str(float(data[ind_s:ind_o]) - float(data[ind_o + 1:ind_f + 1])) + \
                    data[ind_f + 1:]
-            data = str(calc(data))
+            data = calc(data)
 
-    return float(data)
+    return data
+
+
+def calculator(data: str) -> float:
+    return float(calc(data))
 
 
 def isdigit(data):
@@ -94,4 +98,4 @@ def find_bracket(data: str):
 
 
 if __name__ == '__main__':
-    print(calc("(2 * (1 + 3) - 1) - (5 / 2)*2*3-6"))
+    print(calculator("(2 * (1 + 3) - 1) - (5 / 2)*2*3-6"))
