@@ -15,7 +15,7 @@ def calc(data: str) -> str:
     if "(" in data:
         ind_s, ind_f = find_bracket(data)
         if ind_s != ind_f:
-            data = data[0:ind_s] + str(calc(data[ind_s + 1:ind_f])) + data[ind_f + 1:]
+            data = data[0:ind_s] + calc(data[ind_s + 1:ind_f]) + data[ind_f + 1:]
             data = calc(data)
 
     if "*" in data or "/" in data:
@@ -36,7 +36,7 @@ def calc(data: str) -> str:
         ind_s, ind_f, ind_o = find_expression(data, ["+", "-"])
         if data[ind_o] == "+":
             data = (data[0:ind_s] + str(float(data[ind_s:ind_o]) + float(data[ind_o + 1:ind_f + 1])) + data[ind_f + 1:])
-            data = str(calc(data))
+            data = calc(data)
         elif data[ind_o] == "-":
             data = data[0:ind_s] + \
                    str(float(data[ind_s:ind_o]) - float(data[ind_o + 1:ind_f + 1])) + \
