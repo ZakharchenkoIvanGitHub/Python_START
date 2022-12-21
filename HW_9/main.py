@@ -1,4 +1,5 @@
-from controller import start
+import api
 
 if __name__ == '__main__':
-    start()
+    bot = api.MyTelBot()
+    bot.run_bot()
