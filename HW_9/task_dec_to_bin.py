@@ -1,4 +1,5 @@
 def dec_to_bin(num_str: str):
+    """Из десятичного в двоичное"""
     if num_str.isdigit():
         number = int(num_str)
         my_list = ""

@@ -1,4 +1,5 @@
 def negafib(num_str):
+    """Считает числа НегаФибоначчи"""
     if num_str.isdigit():
         number = int(num_str)
         my_list = [0 for _ in range(number * 2 + 1)]

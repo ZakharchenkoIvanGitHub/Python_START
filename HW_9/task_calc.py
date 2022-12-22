@@ -1,4 +1,5 @@
 def calc(data: str) -> str:
+    """Рекурсивная функция калькулятора"""
     if isdigit(data):
         return data
 
@@ -37,6 +38,7 @@ def calc(data: str) -> str:
 
 
 def calculator(data: str) -> str:
+    """Функция приема и выдачи результата"""
     if data.count("(") != data.count(")"):
         return "Ошибка"
     try:
@@ -47,6 +49,7 @@ def calculator(data: str) -> str:
 
 
 def isdigit(data):
+    """проверка на число"""
     try:
         float(data)
     except ValueError:
@@ -55,6 +58,7 @@ def isdigit(data):
 
 
 def find_expression(data: str, search_operand: list):
+    """Поиск оператора"""
     ind_s = 0
     ind_f = 0
     ind_o = 0
@@ -82,6 +86,7 @@ def find_expression(data: str, search_operand: list):
 
 
 def find_bracket(data: str):
+    """Поиск скобок"""
     ind_s = 0
     ind_f = 0
     for i, sym in enumerate(data):
