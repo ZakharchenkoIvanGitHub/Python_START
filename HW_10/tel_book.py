@@ -1,5 +1,5 @@
 import json
-import os
+from os import path
 
 field = {"id": "id: ",
          "first_name": "Имя: ",
@@ -10,12 +10,13 @@ field = {"id": "id: ",
 
 file_db = "db.json"
 
-#todo доделать проверку на надичие файла с БД
+
 def get_data() -> list:
     """
     Выгружает данные из файла и возвращает словарь
     Если id существует, то возвращает только одну запись по id
     """
+    check_file()
     with open(file_db, 'r', encoding="utf-8") as file:
         data_file = json.load(file)
     return data_file["items"]
@@ -25,6 +26,7 @@ def get_data_id(id: int) -> dict:
     """
     Возвращает только одну запись по id
     """
+    check_file()
     with open(file_db, "r", encoding="utf-8") as file:
         data_file = json.load(file)
         for item in data_file['items']:
@@ -36,6 +38,7 @@ def get_data_last_name(last_name: str) -> list:
     """
     Возвращает только одну запись по фамилии
     """
+    check_file()
     res = []
     with open(file_db, "r", encoding="utf-8") as file:
         data_file = json.load(file)
@@ -52,7 +55,7 @@ def add_data(data: dict):
     :param data:
     """
     id = data.get("id")
-
+    check_file()
     with open(file_db, 'r', encoding="utf-8") as file:
         data_file = json.load(file)
 
@@ -75,14 +78,25 @@ def add_data(data: dict):
 def create_card(data):
     res = ""
     for key in field:
-        if key =="phone_number":
-            res += field[key]
+        if key == "phone_number":
+            res += field[key] + "<b>"
             for tel in data[key]:
-                res += tel+" "
-            res += "\n"
+                res += tel + " "
+            res += "</b> \n"
 
         else:
-            res += field[key] + str(data[key]) + '\n'
+            res += f"{field[key]} <b>{str(data[key])}</b>  \n"
     if not data:
-        res = "<-Нет данных для отображения->"
+        res = "<b><-Нет данных для отображения-></b>"
     return res
+
+
+def check_file():
+    if not path.isfile(file_db):
+        with open(file_db, 'w') as file:
+            file.write("""{
+  "last_id": {
+    "id": 0
+  },
+  "items": []
+}""")
