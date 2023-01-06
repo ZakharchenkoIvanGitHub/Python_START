@@ -1,0 +1,129 @@
+{
+  "last_id": {
+    "id": 11
+  },
+  "items": [
+    {
+      "id": 1,
+      "first_name": "Иван",
+      "last_name": "Захарченко",
+      "birthday": "02.03.1983",
+      "workplace": "безработный",
+      "phone_number": [
+        "+71234568944",
+        "+78945624526",
+        "+71785126925"
+      ]
+    },
+    {
+      "first_name": "Вася",
+      "last_name": "Пупкин",
+      "phone_number": [
+        "777",
+        "555",
+        "666"
+      ],
+      "birthday": "14,36,25",
+      "workplace": "яяяяяяя",
+      "id": 2
+    },
+    {
+      "first_name": "Маша",
+      "last_name": "Петрова",
+      "phone_number": [
+        "7777"
+      ],
+      "birthday": "23,06,1999",
+      "workplace": "не работает",
+      "id": 3
+    },
+    {
+      "first_name": "Петр",
+      "last_name": "Иванов",
+      "phone_number": [
+        "777",
+        "888"
+      ],
+      "birthday": "22,03,66",
+      "workplace": "Слесарь",
+      "id": 4
+    },
+    {
+      "first_name": "Петя",
+      "last_name": "Петров",
+      "phone_number": [
+        "1111",
+        "2222",
+        "333",
+        "444"
+      ],
+      "birthday": "11,22,33",
+      "workplace": "Рынок",
+      "id": 5
+    },
+    {
+      "first_name": "гшгншг",
+      "last_name": "гншнгш",
+      "phone_number": [
+        "гшнг"
+      ],
+      "birthday": "гншгн",
+      "workplace": "гшн",
+      "id": 6
+    },
+    {
+      "first_name": "qqqqq",
+      "last_name": "wwwwwwwwwwww",
+      "phone_number": [
+        "eeee",
+        "ffff",
+        "66666"
+      ],
+      "birthday": "565.565.565",
+      "workplace": "tttttt",
+      "id": 7
+    },
+    {
+      "first_name": "Петр",
+      "last_name": "Сидоров",
+      "phone_number": [
+        "111",
+        "222",
+        "333"
+      ],
+      "birthday": "1,03,22",
+      "workplace": "ццццц",
+      "id": 8
+    },
+    {
+      "first_name": "Василий",
+      "last_name": "Сидоров",
+      "phone_number": [
+        "1111"
+      ],
+      "birthday": "1,22,33",
+      "workplace": "ййййййййй",
+      "id": 9
+    },
+    {
+      "first_name": "erer",
+      "last_name": "erer",
+      "phone_number": [
+        "erer"
+      ],
+      "birthday": "rerer",
+      "workplace": "erer",
+      "id": 10
+    },
+    {
+      "first_name": "Вера",
+      "last_name": "Полякова",
+      "phone_number": [
+        "8961434576"
+      ],
+      "birthday": "28.03.1988",
+      "workplace": "Домохозяйка",
+      "id": 11
+    }
+  ]
+}
